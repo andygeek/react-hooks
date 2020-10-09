@@ -1,11 +1,11 @@
 import React from 'react';
-import { CounterApp } from './components/CounterApp.jsx';
+import { TodoApp } from './components/TodoApp.jsx';
 
 export const App = () => {
 	console.log("Renderizando primer componente");
 	return (
 		<div className="container">
-			<CounterApp />
+			<TodoApp />
 		</div>
 	);
 };
