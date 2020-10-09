@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export const CounterApp = () => {
 	const [counter, setCounter] = useState({
@@ -9,6 +9,11 @@ export const CounterApp = () => {
 	console.log(':D');
 	// Destructuring
 	const { counter1, counter2, counter3 } = counter;
+
+	// Only execute when counter 2 change
+	useEffect(() => {
+		console.log("Cambio el segundo numero");
+	}, [counter2])
 
 	return (
 		<>
@@ -44,6 +49,17 @@ export const CounterApp = () => {
 				+1
 			</button>
 
+			<button
+				className="btn btn-warning ml-2"
+				onClick={() => {
+					setCounter({
+						...counter,
+						counter1: 0,
+					});
+				}}
+			>
+				Counter 1
+			</button>
 		</>
 	);
 };
